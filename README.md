@@ -2,6 +2,7 @@
 # Virtue-Vice Habit Tracker
 # Available at: https://virtue-vice.herokuapp.com
 Virtue-Vice is a web application that allows users to track their habits. Users can specify how many times each day, on which days, upload a personal image, and also indicate whether or not the app should send out push notifications at certain times for a habit.
+
 ![App Example](/public/img/add-view.png)
 
 ## Application Overview
