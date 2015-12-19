@@ -107,7 +107,4 @@ There are a number of issues, bugs, and limitations that we will attempt to outl
 * Packaging issues: because we only scratched the surface with mobile and desktop apps, their implementations are nowhere close to completion or realistic usability. They were done to demonstrate feasibility and allowed us to explore what options were available.
 * Usability & Scope: because we had very limited time and understanding of the requirements of the app, it may not be widely used.
 * Edge cases: As with any app, it is not possible for our team to cover all the possible edge cases or account for every factor that could harm our app (network, hackers, etc).
-* ARIA Accessibility: With the time constraint, we were unable to make our application ARIA accessible.
-
-## Conclusion
-Our team enjoyed the process of making this app. Because we built the app from the ground up, we gained an insight into the development process of a live application. From design, to user analysis, to implementation, our team explored many languages, technologies, and ideas in order to finish this web application. Our entire team made vast contributions in order to complete the application to the best of our abilities.
+* ARIA Accessibility: We are looking into making the web app ARIA accessible in the future.
