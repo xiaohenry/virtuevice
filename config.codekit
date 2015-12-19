@@ -53,13 +53,13 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/public\/img\/add-page.png": {
+	"\/public\/img\/add-view.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 155486,
-		"inputAbbreviatedPath": "\/public\/img\/add-page.png",
-		"outputAbbreviatedPath": "\/public\/img\/add-page.png",
+		"initialSize": 57053,
+		"inputAbbreviatedPath": "\/public\/img\/add-view.png",
+		"outputAbbreviatedPath": "\/public\/img\/add-view.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
