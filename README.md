@@ -3,7 +3,6 @@
 # Available at: https://virtue-vice.herokuapp.com
 
 ## Application Overview
-* Test account: tester@email.com // tester
 * Frontend: HTML / CSS (SCSS) / JS (jQuery, HandlebarsJS)
 * Backend: NodeJS / Parse
 * Services Used: OneSignal / Rollbar / Mixpanel
