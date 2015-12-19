@@ -1,12 +1,6 @@
 
+# Virtue-Vice Habit Tracker
 # Available at: https://virtue-vice.herokuapp.com
-
-## Team Members
-* Henry Xiao
-* Daniel Kong
-* Eric Amzaleg
-* Robert Recatto
-* Joseph Ho
 
 ## Application Overview
 * Test account: tester@email.com // tester
