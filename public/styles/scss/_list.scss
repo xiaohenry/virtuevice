@@ -1,0 +1,332 @@
+#list-page {
+    section#section-body {
+        box-shadow: $box-shadow;
+        margin: 100px auto 25px auto;
+        width: 100%;
+        max-width: 600px;
+        @media #{$lt-480} {
+            margin: 75px auto 25px auto;
+        }
+    }
+    header#page-header {
+        text-align:center;
+        background-color: $orange;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: white;
+        font-size: 20px;
+    }
+
+    #habit-list {
+        list-style: none;
+        padding: 0;
+    }
+    .habit-element{
+        position: relative;
+        height: 100%;
+        padding: 0px 20px 15px 20px;
+        background: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        margin-bottom: 8px;
+        @media #{$lt-480} {
+            padding: 0px 10px 15px 10px;
+        }
+    }
+    /* habit info */
+
+    .habit-info {
+        padding: 0;
+        margin-left: 20px;
+    }
+    .habit-left-content {
+        display: inline-block;
+        padding: 0;
+        margin: 10px 5px 10px 0;
+        vertical-align: center;
+        @media #{$lt-640} {
+            width: 100%;
+            display: block;
+            margin: 10px auto;
+            text-align: center;
+        }
+    }
+    .habit-name {
+        display: inline-block;
+        font-size: 18px;
+        margin: 10px 0;
+        p {
+            max-width: 300px;
+            width: 100%;
+            @media #{$lt-480}{
+                font-size: 16px;
+                max-width: 245px;
+            }
+            @media #{$lt-360}{
+                max-width: 215px;
+                // width: 70%;
+            }
+        }
+    }
+    .habit-icon {
+        margin-top: 5px;
+        border-radius: 100%;
+        width: 120px;
+        height: 120px;
+    }
+    .habit-right-content{
+        width: 45%;
+        float: right;
+        display: inline-block;
+        @media #{$lt-640} {
+            float: none;
+            width: 100%;
+        }
+        .message {
+            text-align: center;
+            color: $black;
+            width: 100%;
+            margin: 30px auto 0 auto;
+            @media #{$lt-640} {
+                max-width: 350px;
+                margin: 5px auto;
+            }
+            // .message-today{
+            // opacity: 0;
+            // }
+            .status-bar-wrapper {
+                width: 100%;
+                background-color: $gray;
+
+            }
+            .status-bar {
+                width: 0;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                height: 25px;
+                background-color: $green;
+            }
+        }
+    }
+
+    /* operations (for a existing habit) */
+    .habit-op {
+        position: absolute;
+        right: 5px;
+        display: inline-block;
+        height: 100%;
+        line-height: 60px;
+        width: 100%;
+        text-align: center;
+        top: 170px;
+        margin: 0 auto;
+    }
+    .habit-op img {
+        height: 90%;
+    }
+    .op {
+        cursor: pointer;
+        width: 60px;
+        height: 60px;
+        margin-right: 5px;
+        border-radius: 50%;
+        padding: 5px;
+        vertical-align: middle;
+        box-shadow: $box-shadow;
+        &:focus {
+            outline: none;
+        }
+        &:hover{
+            // box-shadow: $box-shadow;
+        }
+    }
+    .op-done {
+        border: none;
+        background: rgba(0, 177, 106, 0.8);
+        margin-top: 35px;
+        vertical-align: top;
+        margin-left: 40px;
+        margin-right: 2.5px;
+        width: 60px;
+        height: 60px;
+        // div {
+        //     background-image: url('../../img/sprites.png');
+        //     background-repeat: no-repeat;
+        //     background-position: -131px -429px ;
+        // 	width: 30px;
+        // 	height: 30px;
+        // }
+        &:hover, &.active {
+            &:not(.disabled) {
+                background-color: lighten($green, 2.5%);
+                margin-top: 32.5px;
+                margin-left: 37.5px;
+                margin-right: 0px;
+                width: 65px;
+                height: 65px;
+            }
+        }
+    }
+    .icon-wrapper{
+        position: absolute;
+        top: 0px;
+        right: 5px;
+        .op-del, .op-edit{
+            margin-top: 10px;
+            width: 30px;
+            height: 30px;
+            margin-left:5px;
+            margin-right: 5px;
+            float: right;
+            vertical-align: top;
+        }
+        .op-edit {
+            background-color: rgb(247, 202, 24);
+            border: none;
+            &:hover, &.active {
+                background-color: lighten(rgb(247, 202, 24), 4%);
+                margin-left: 4px;
+                margin-right: 4px;
+                margin-top:9px;
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        .op-del {
+            background: rgb(242, 38, 19);
+            border: none;
+            &:hover, &.active {
+                background-color: lighten(rgb(242, 38, 19), 4%);
+                margin-left: 4px;
+                margin-right: 4px;
+                margin-top:9px;
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+    .status-controls .op-done{
+
+    }
+    /* add habit */
+#add-habit-btn{
+        cursor: pointer;
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background-color: $orange;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 36px;
+        border: none;
+        border-radius: 50%;
+        box-shadow: $box-shadow;
+        @media #{$lt-480} {
+            width: 100%;
+            bottom: 0;
+            right: 0;
+            border-radius: 0;
+            height: 40px;
+            line-height: 40px;
+            padding: 0;
+        }
+        @media #{$lt-360} {
+            height: 35px;
+            line-height: 35px;
+        }
+        // @media #{$lt-360} {
+        //
+        // }
+        &:hover {
+            background-color: darken($orange, 5%);
+        }
+        &:focus {
+            outline-style: none;
+        }
+    }
+    #weekly-view-container{
+        display: block;
+        width: 100%;
+        @media #{$lt-640} {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .weekly-view{
+            font-size: 13px;
+            width: 27px;
+            height: 27px;
+            line-height: 27px;
+            text-align: center;
+            border-radius: 100%;
+            background-color: $gray;
+            color: white;
+            display: inline-block;
+            &.active {
+                background-color: $green;
+            }
+            &.today{
+                border:2px solid $dark-blue;
+            }
+        }
+    }
+    #confirm-delete{
+        position:fixed;
+        top:30%;
+        left: calc(50vw - 180px);
+        height: 150px;
+        width: 350px;
+        background-color:white;
+        z-index: 500;
+        display:none;
+        .confirm-buttons{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            p{
+                margin-left: 5px;
+                margin-right: 5px;
+                width: 50px;
+                display:inline-block;
+                cursor: pointer;
+                padding: 6px;
+                color: white;
+                font-size: 12px;
+            }
+            p#delete-cancel{
+                background-color:$green;
+                &:hover{
+                    background-color: darken($green, 5%);
+                }
+            }
+            p#delete-final{
+                background-color:$orange;
+                &:hover{
+                    background-color: darken($orange, 5%);
+                }
+            }
+        }
+        p{
+            margin-top: 40px;
+            width: 300px;
+            text-align:center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+
+    .mask-filter{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 450;
+        background-color: black;
+        opacity: .8;
+    }
+}

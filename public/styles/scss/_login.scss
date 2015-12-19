@@ -1,0 +1,251 @@
+#login-section {
+    box-shadow: $box-shadow;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 50px 1%;
+    max-width: 500px;
+    width: 100%;
+    // border-radius: 2px;
+    background-color: rgb(245,245,245);
+    text-align: center;
+    transition: $ease;
+    @media #{$lt-360} {
+        top: 20px;
+        padding: 10px 1% 30px 1%;
+    }
+    .login-header {
+        // img {
+        //     width: 100px;
+        //     height: 100px;
+        //     margin-bottom: -22px;
+        // }
+        .login-logo {
+            margin-bottom: 25px;
+        }
+        h2 span.open-sans{
+            font-size: 38px;
+            font-family: $open-sans;
+            color: $green;
+        }
+        h2 span.yellowtail {
+            font-size: 50px;
+            font-family: $yellowtail;
+            color: $orange;
+        }
+        h2 span.separator {
+            font-family: $yellowtail;
+            font-size: 30px;
+        }
+        .login-catch-container {
+            margin: 0 auto;
+            text-align: center;
+            margin-top: -27px;
+        }
+        .login-catch {
+            display: inline-block;
+            font-weight: normal;
+            background-color: rgb(245,245,245);
+            padding: 0 12px;
+        }
+    }
+    .login-form {
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 242px; // This is the total width of the input fields
+        text-align: left;
+        @media #{$lt-480} {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        label {
+            font-style: italic;
+        }
+        input {
+            // position: relative;
+            display: block;
+            margin: 0 0 10px 0;
+            padding: 10px;
+            width: 220px;
+            border: 1px solid $black;
+            // border-radius: 2px;
+            background-color: white;
+            font-size: 14px;
+            font-weight: 300;
+            &:focus {
+                outline-color: $green;
+                outline-width: 3px;
+            }
+        }
+        input#login-button {
+            appearance: none;
+            margin-top: 25px;
+            width: 242px;
+            border: none;
+            padding-left: 0;
+            background-color: $green;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: $box-shadow;
+            &:hover {
+                border-color: darken($green,2.5%);
+                background-color: darken($green,2.5%);
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        // span.login-email-error, span.login-pw-error {
+        .error-msg {
+            display: none;
+            color: $orange;
+            font-size: 12px;
+        }
+    }
+    .login-submit-error {
+        margin-top: 15px;
+        color: $orange;
+        font-size: 16px;
+        visibility: hidden;
+    }
+    a {
+        color: $green;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+#register-section {
+    box-shadow: $box-shadow;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 50px 1%;
+    max-width: 500px;
+    width: 100%;
+    // border-radius: 2px;
+    background-color: rgb(245,245,245);
+    text-align: center;
+    transition: $ease;
+    @media #{$lt-360} {
+        top: 20px;
+        padding: 10px 1% 30px 1%;
+    }
+    .register-header {
+        // img {
+        //     width: 100px;
+        //     height: 100px;
+        //     margin-bottom: -10px;
+        // }
+        .register-logo {
+            margin-bottom: 25px;
+            line-height: 50px;
+        }
+        h2 span.open-sans {
+            font-size: 38px;
+            font-family: $open-sans;
+            color: $green;
+        }
+        h2 span.yellowtail {
+            font-size: 55px;
+            font-family: $yellowtail;
+            color: $orange;
+        }
+        h2 span.separator {
+            font-family: $yellowtail;
+            font-size: 30px;
+        }
+        .register-catch-container {
+            margin: 0 auto;
+            text-align: center;
+            margin-top: -27px;
+        }
+        .register-catch {
+            font-weight: normal;
+            display: inline-block;
+            background: rgb(245,245,245);
+            padding: 0 12px;
+        }
+    }
+    .register-form {
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 242px; // This is the total width of the input fields
+        text-align: left;
+        @media #{$lt-480} {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        label {
+            font-style: italic;
+
+        }
+        input {
+            // position: relative;
+            display: block;
+            margin: 0 0 10px 0;
+            padding: 10px;
+            width: 220px;
+            border: 1px solid $black;
+            // border-radius: 2px;
+            background-color: white;
+            font-size: 14px;
+            font-weight: 300;
+            &:focus {
+                outline-color: $green;
+                outline-width: 3px;
+            }
+        }
+        input#register-button {
+            border: none;
+            appearance: none;
+            cursor: pointer;
+            margin-top: 25px;
+            width: 242px;
+            padding-left: 0;
+            // border: 1px solid $green;
+            background-color: $green;
+            font-size: 16px;
+            color: white;
+                box-shadow: $box-shadow;
+            &:hover {
+                border-color: darken($green,2.5%);
+                background-color: darken($green,2.5%);
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        // span.register-email-error, span.register-pw-error, span.register-pw-confirm-error {
+        .error-msg {
+            display: none;
+            color: $orange;
+            font-size: 12px;
+        }
+    }
+    .register-submit-error {
+        margin-top: 15px;
+        color: $orange;
+        font-size: 16px;
+        visibility: hidden;
+    }
+    a {
+        color: $green;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

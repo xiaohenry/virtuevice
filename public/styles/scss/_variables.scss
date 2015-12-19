@@ -1,0 +1,44 @@
+/** FONTS **/
+@import url(https://fonts.googleapis.com/css?family=Yellowtail);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600);
+
+$yellowtail: 'Yellowtail', cursive;
+$open-sans: 'Open Sans', sans-serif;
+
+/** COLORS **/
+$green: #48BA87;
+$dark-blue: #344354;
+$orange: rgb(214, 89, 89);
+// $orange: #48BA87;
+$light-gray: rgb(235, 235, 235);
+$dark-gray: rgb(150, 150, 150);
+$gray: darken($light-gray, 10%);
+$maroon: rgb(195, 15, 52);
+$black: rgb(60,60,60);
+
+/** BOX SHADOW **/
+$box-shadow: 3px 3px 4px rgba(60,60,60,0.4);
+
+/** GT - Progressive. Enh**/
+$gt-320: 'only screen and (min-width: 20em)';
+$gt-360: 'only screen and (min-width: 22.5em)';
+$gt-480: 'only screen and (min-width: 30em)';
+$gt-640: 'only screen and (min-width: 40em)';
+$gt-768: 'only screen and (min-width: 48em)';
+$gt-900: 'only screen and (min-width: 56.25em)';
+$gt-940: 'only screen and (min-width: 58.75em)';
+$gt-1000: 'only screen and (min-width: 62.5em)';
+$gt-1200: 'only screen and (min-width: 75em)';
+$gt-1250: 'only screen and (min-width: 78.125em)';
+/** LT - Graceful Deg. **/
+$lt-320: 'only screen and (max-width: 19.9375em)';
+$lt-360: 'only screen and (max-width: 22.4375em)';
+$lt-480: 'only screen and (max-width: 29.9375em)';
+$lt-640: 'only screen and (max-width: 39.9375em)';
+$lt-768: 'only screen and (max-width: 47.9375em)';
+$lt-900: 'only screen and (max-width: 56.1875em)';
+$lt-940: 'only screen and (max-width: 58.6875em)';
+$lt-1000: 'only screen and (max-width: 62.4375em)';
+$lt-1200: 'only screen and (max-width: 74.9375em)';
+
+$ease: 0.1s all ease-in-out;

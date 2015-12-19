@@ -1,0 +1,11 @@
+{
+  "applications": {
+    "_default": {
+      "link": "virtuevice"
+    },
+    "virtuevice": {
+      "parseAppId": "hIP8KstprKjGsmE4VVHT86i2m1VobE8Mc0x7pBi6",
+      "herokuAppId": "93c08199-ddda-483b-a303-08b92e20bf24"
+    }
+  }
+}

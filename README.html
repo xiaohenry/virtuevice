@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<h1 id="availableat:https:virtue-vice.herokuapp.com">Available at: https://virtue-vice.herokuapp.com</h1>
+
+<h2 id="teammembers">Team Members</h2>
+
+<ul>
+<li>Henry Xiao</li>
+<li>Daniel Kong</li>
+<li>Eric Amzaleg</li>
+<li>Robert Recatto</li>
+<li>Joseph Ho</li>
+</ul>
+
+<h2 id="applicationoverview">Application Overview</h2>
+
+<ul>
+<li>Test account: tester@email.com // tester</li>
+<li>Frontend: HTML / CSS (SCSS) / JS (jQuery, HandlebarsJS)</li>
+<li>Backend: NodeJS / Parse</li>
+<li>Services Used: OneSignal / Rollbar / Mixpanel</li>
+<li>Build/Task Tools: CodeKit / KoalaApp</li>
+<li>Packaging/Porting: iOS / Android / OS X / Windows / Linux</li>
+</ul>
+
+<h2 id="notifications">Notifications</h2>
+
+<p>We implemented user notifications in the previous iteration, so our notification system is working for Chrome, Safari, and Firefox. This requires an opt-in from the user. Notifications can be added from the Add/Edit Habit page, with time intervals every 30 minutes. Duplicate notifications will not be saved to our database. Our NodeJS server runs a cron job to send notifications every 30 minutes using the OneSignal API.</p>
+
+<h2 id="errormonitoring">Error Monitoring</h2>
+
+<p>We instrumental Rollbar to track our errors. Rollbar is error tracking software that can be included in our app with script tags. Whenever an exception or error is encountered in our application (whether fatal or not), Rollbar emails us with invaluable feedback, including:
+* The exception
+* Callstack with file name, line number, function name
+* Browser model and version
+* Browser info: screen width/height, JS enabled, cookies enabled,
+* Time and URL where the error occurred</p>
+
+<p>We included Rollbar early in our development process to help us better track our issues. We found that by using Rollbar, we caught a lot of hidden bugs that we were not initially aware of. Moreover, Rollbar also keeps track of how often each error occurs, allowing us to prioritize larger and more critical issues first.</p>
+
+<h2 id="usagemonitoringanalytics">Usage Monitoring &amp; Analytics</h2>
+
+<p>We used Parse Analytics and Mixpanel to monitor our app&#8217;s usage and analyze what our user&#8217;s were doing. With Mixpanel, we were able to track many different actions that user&#8217;s could take, and how often they would take them. This allows us to see the frequency at which users perform certain actions.</p>
+
+<h6 id="mixpanelmonitoringincludes:">Mixpanel monitoring includes:</h6>
+
+<ul>
+<li>Creating a Habit</li>
+<li>Editing a Habit</li>
+<li>Deleting a Habit</li>
+<li>Finishing a Habit</li>
+<li>User registering</li>
+<li>User logging in</li>
+<li>Sending Notification</li>
+<li>Improperly filled form</li>
+</ul>
+
+<p>Tracking things like when a user improperly fills a form gives us insight into whether our forms are too complicated or unclear. If we get many events pertaining to improperly filled forms, then this may mean that our forms need to be simplified and reworked. Other statistics like Finishing a Habit and Creating a Habit tells us if our users are actually using our application.</p>
+
+<p>Because we built our application using Parse, we also leveraged Parse Analytics. Parse gives us many useful statistics pertaining to users and logistics. With Parse, we are able to understand our users and keep track of how our application is handling those users.</p>
+
+<h6 id="parseanalyticsinclude:">Parse Analytics include:</h6>
+
+<ul>
+<li>Daily, Weekly, Monthly active users</li>
+<li>API Requests</li>
+<li>Performance, File Storage, Database Storage</li>
+<li>Queries that are slowing down our Application</li>
+<li>Application crashes</li>
+</ul>
+
+<h2 id="minificationbundling">Minification &amp; Bundling</h2>
+
+<p>We used CodeKit and KoalaApp for our compilation, minification, and bundling efforts.</p>
+
+<h6 id="cssscss">CSS/SCSS</h6>
+
+<p>We compiled our SCSS into CSS, concatenated those CSS files into a single file, and finally compressed and minified that CSS file. This allowed us to make a single HTTP Request to retrieve our CSS file, greatly increasing our performance and also decreasing network requests.</p>
+
+<h6 id="javascript">JavaScript</h6>
+
+<p>With CodeKit, we were able to concatenate all of our JS files into a single, minified file (with a few exceptions). Like with our CSS files, this vastly improved our performance and decreased the size of the request contents as well. Again, this limited the number of HTTP requests we had to make to retrieve our necessary files. With our CSS and JS bundling/minification, we only needed to make two primary requests for our primary files. However, with some of the services we used, we had to include inline scripts in order to load them immediately.</p>
+
+<h2 id="imagespriting">Image Spriting</h2>
+
+<p>Initially, we had a large mixture of PNGs, JPGs, and SVGs. After looking into possible spritesheet/bundling options, our team decided to instead include a block of inline SVGs to handle our images, which provides us with the same functionality (with better performance) as a bundled spritesheet. In our HTML, we simply include our SVG code for the following:
+* Done button
+* Edit button
+* Delete button
+* Exit button (&#8216;X&#8217; on the Add/Habit page)</p>
+
+<p>With all these images declared as in-file SVGs, we were able to reduce the number of HTTP Requests. We provide the user with one default Habit icon, which is referenced as an external JPG in our img/ directory.</p>
+
+<h6 id="splashpage">Splash Page</h6>
+
+<p>We created a simple splash page the user arrives at if: (1) the user just registered or (2) the user logs in and has 0 habits. This splash page was intended to provide an aesthetic and simple call to action for users to create their first habit. The background image is an external JPG with 3 different sizes. At different breakpoints, we used different resolution images to improve performance:
+* &gt; 940px screen width: 1600px width image resolution
+* &lt; 940px screen width: 1280px width image resolution
+* &lt; 640px screen width: 960px width image resolution</p>
+
+<p>By optimizing our images and removing unnecessary HTTP requests, we were able to further improve the performance of our application.</p>
+
+<h2 id="mobileappproofofconceptiosandroid">Mobile App Proof of Concept (iOS, Android)</h2>
+
+<p>After looking into Ionic Framework, PhoneGap (Cordova), and creating a mobile app from scratch, our team conclusively decided on PhoneGap. With PhoneGap, we were able to port our entire app over to iOS and Android. Using Android Studio and XCode to emulate our application, we were able to port and run a working version of our app, with the exception of notifications. Notifications do not work because OneSignal is a web API that does not extend push functionality to native mobile applications.</p>
+
+<h6 id="ios">iOS</h6>
+
+<p>Our ported iOS application can be emulated with XCode using the HelloWorld.xcodeproj located in the virtuevice-ios/platforms/ios/ directory. All of our functionality is working, with the exception of notifications.
+<img src="/public/img/ios-screenshot.png" alt="iOS" /></p>
+
+<h6 id="android">Android</h6>
+
+<p>Our ported Android application can be emulated using Android Studio (or another Android emulator) by building the entire project in virtuevice-android/. All of our functionality is working, with the exception of notifications. Note that this project will have to be built as a &#8220;gradle&#8221; project.
+<img src="/public/img/android-screenshot.png" alt="Android" /></p>
+
+<h2 id="packagingefforts-macosxwindowslinux">Packaging Efforts - (Mac OS X, Windows, Linux)</h2>
+
+<p>We used Github&#8217;s Electron (previously known as Github Shell) to package our app into a desktop application. With Electron, we were able to easily port our web application into a desktop application. We were able to port our application into OS X, Windows, and Linux desktop apps.</p>
+
+<h2 id="testingusability">Testing &amp; Usability</h2>
+
+<p>We used CodeKit to throw up a local server on our machines to (loosely) emulate a live web application. While we know this is limited and still provides us with a very skewed online connection, this allowed us to better test our application. Again, we tested our app on Chrome, Safari, FireFox, Internet Explorer (11, Edge), and several mobile browsers. While we experience aesthetic differences between the browsers, the application&#8217;s core functionality are working on all of them (with the exception of notifications on IE, mobile Chrome, and Firefox).</p>
+
+<h2 id="performancedesign">Performance &amp; Design</h2>
+
+<ul>
+<li>We optimized our images, used inline SVGs, bundled &amp; minified our CSS/JS</li>
+<li>Provide the user with quick and seamless feedback for form validation and user events</li>
+<li>Deployed simple material design to help the user easily differentiate flat forms from buttons with box shadows, allowing us to create better call-to-actions</li>
+</ul>
+
+<h2 id="knownissuesbugslimitations">Known Issues, Bugs, &amp; Limitations</h2>
+
+<p>There are a number of issues, bugs, and limitations that we will attempt to outline.
+* Timezone discrepancies: Our notifications are based on UTC&#8211;8 (PST) time and does not allow a user to use a specified timezone
+* Parse server delay: Occasionally when a user performs very quick actions and does a page refresh/redirect, our app may not correctly register the actions because the request to Parse was not allowed to complete.
+* Parse API request limit: Parse limits requests to 30 Requests/second. If we generate enough users, this limit may be exceeded. In order to increase the request limit, Parse charges a fee. Other possible routes (for future consideration), would be to build a custom backend or use a different service.
+* Heroku sleeping: We deployed on Heroku&#8217;s free tier, which limits server up-time to 18 hours every 24 hours. This means our app may <em>potentially</em> sleep for up to 6 hours each day. This presents issues when we try to reset our habits every day and send notifications. We can prevent this in the future by paying a fee to Heroku to keep our server up 24/7.
+* Packaging issues: because we only scratched the surface with mobile and desktop apps, their implementations are nowhere close to completion or realistic usability. They were done to demonstrate feasibility and allowed us to explore what options were available.
+* Usability &amp; Scope: because we had very limited time and understanding of the requirements of the app, it may not be widely used.
+* Edge cases: As with any app, it is not possible for our team to cover all the possible edge cases or account for every factor that could harm our app (network, hackers, etc).
+* ARIA Accessibility: With the time constraint, we were unable to make our application ARIA accessible.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Our team enjoyed the process of making this app. Because we built the app from the ground up, we gained an insight into the development process of a live application. From design, to user analysis, to implementation, our team explored many languages, technologies, and ideas in order to finish this web application. Our entire team made vast contributions in order to complete the application to the best of our abilities.</p>
+
+</body>
+</html>
