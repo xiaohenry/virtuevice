@@ -80,10 +80,12 @@ After looking into Ionic Framework, PhoneGap (Cordova), and creating a mobile ap
 
 ###### iOS
 Our ported iOS application can be emulated with XCode using the HelloWorld.xcodeproj located in the virtuevice-ios/platforms/ios/ directory. All of our functionality is working, with the exception of notifications.
+
 ![iOS](/public/img/ios-screenshot.png)
 
 ###### Android
 Our ported Android application can be emulated using Android Studio (or another Android emulator) by building the entire project in virtuevice-android/. All of our functionality is working, with the exception of notifications. Note that this project will have to be built as a "gradle" project.
+
 ![Android](/public/img/android-screenshot.png)
 
 ## Packaging Efforts - (Mac OS X, Windows, Linux)
